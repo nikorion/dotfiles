@@ -23,9 +23,19 @@ plutôt que de tenter de n'exclure qu'une ligne.
 
 ## Installation sur une nouvelle machine
 
+Point d'entrée unique (clone `.dotfiles`/`.app-configs` depuis GitHub s'ils
+manquent, puis lance les 3 `restore.ps1` à la suite) :
+
 ```powershell
-.\restore.ps1
+.\bootstrap.ps1
 ```
+
+`.secrets` n'a pas de remote (jamais publié) : il doit être copié
+manuellement à côté des deux autres (clé USB, Nextcloud…) avant de lancer
+`bootstrap.ps1` pour que son étape soit prise en compte — sinon elle est
+juste signalée et sautée.
+
+Pour restaurer un seul dépôt : `.\restore.ps1` depuis son dossier.
 
 Active le Mode développeur Windows au préalable si besoin (Paramètres →
 Confidentialité et sécurité → Pour les développeurs), sinon la création de
