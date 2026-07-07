@@ -82,38 +82,6 @@ $groups = @(
         @{ target = "$env:USERPROFILE\.claude\guides";       link = "$Repo\claude\guides" }
         @{ target = "$env:USERPROFILE\.claude\agents";       link = "$Repo\claude\agents" }
         @{ target = "$env:USERPROFILE\.claude\settings.json";link = "$Repo\claude\settings.json" } ) }
-    @{ Name = "digiKam";         Check = @{Type="Registry";  Value="*digiKam*"};      Files = @(
-        @{ target = "$env:LOCALAPPDATA\digikam_systemrc"; link = "$Repo\apps\digikam\digikam_systemrc" } ) }
-    @{ Name = "Showfoto";        Check = @{Type="Registry";  Value="*digiKam*"};      Files = @(
-        @{ target = "$env:APPDATA\showfoto\favorites.xml"; link = "$Repo\apps\showfoto\favorites.xml" } ) }
-    @{ Name = "Calibre";         Check = @{Type="Registry";  Value="*calibre*"};      Files = @(
-        @{ target = "$env:APPDATA\calibre\customize.py.json";    link = "$Repo\apps\calibre\customize.py.json" }
-        @{ target = "$env:APPDATA\calibre\global.py.json";       link = "$Repo\apps\calibre\global.py.json" }
-        @{ target = "$env:APPDATA\calibre\gui.json";             link = "$Repo\apps\calibre\gui.json" }
-        @{ target = "$env:APPDATA\calibre\gui.py.json";          link = "$Repo\apps\calibre\gui.py.json" }
-        @{ target = "$env:APPDATA\calibre\save_to_disk.py.json"; link = "$Repo\apps\calibre\save_to_disk.py.json" }
-        @{ target = "$env:APPDATA\calibre\tweak_book_gui.json";  link = "$Repo\apps\calibre\tweak_book_gui.json" }
-        @{ target = "$env:APPDATA\calibre\viewer-webengine.json";link = "$Repo\apps\calibre\viewer-webengine.json" } ) }
-    @{ Name = "MusicBee";        Check = @{Type="Registry";  Value="*MusicBee*"};     Files = @(
-        @{ target = "$env:APPDATA\MusicBee\MusicBee3Settings.ini"; link = "$Repo\apps\musicbee\MusicBee3Settings.ini" } ) }
-    @{ Name = "Notepad++";       Check = @{Type="Registry";  Value="*Notepad++*"};    Files = @(
-        @{ target = "$env:APPDATA\Notepad++\config.xml";         link = "$Repo\apps\notepad++\config.xml" }
-        @{ target = "$env:APPDATA\Notepad++\contextMenu.xml";    link = "$Repo\apps\notepad++\contextMenu.xml" }
-        @{ target = "$env:APPDATA\Notepad++\shortcuts.xml";      link = "$Repo\apps\notepad++\shortcuts.xml" }
-        @{ target = "$env:APPDATA\Notepad++\stylers.xml";        link = "$Repo\apps\notepad++\stylers.xml" }
-        @{ target = "$env:APPDATA\Notepad++\userDefineLang.xml"; link = "$Repo\apps\notepad++\userDefineLang.xml" } ) }
-    @{ Name = "OBS Studio";      Check = @{Type="Registry";  Value="*OBS Studio*"};   Files = @(
-        @{ target = "$env:APPDATA\obs-studio\global.ini"; link = "$Repo\apps\obs-studio\global.ini" }
-        @{ target = "$env:APPDATA\obs-studio\user.ini";   link = "$Repo\apps\obs-studio\user.ini" } ) }
-    @{ Name = "Mp3tag";          Check = @{Type="Registry";  Value="*Mp3tag*"};       Files = @(
-        @{ target = "$env:APPDATA\Mp3tag\mp3tag.cfg"; link = "$Repo\apps\mp3tag\mp3tag.cfg" } ) }
-    @{ Name = "FileZilla";       Check = @{Type="Registry";  Value="*FileZilla*"};    Files = @(
-        @{ target = "$env:APPDATA\FileZilla\sitemanager.xml"; link = "$Repo\apps\filezilla\sitemanager.xml" }
-        @{ target = "$env:APPDATA\FileZilla\filezilla.xml";   link = "$Repo\apps\filezilla\filezilla.xml" }
-        @{ target = "$env:APPDATA\FileZilla\bookmarks.xml";   link = "$Repo\apps\filezilla\bookmarks.xml" }
-        @{ target = "$env:APPDATA\FileZilla\layout.xml";      link = "$Repo\apps\filezilla\layout.xml" } ) }
-    @{ Name = "KeePassXC";       Check = @{Type="Registry";  Value="*KeePassXC*"};    Files = @(
-        @{ target = "$env:APPDATA\KeePassXC\keepassxc.ini"; link = "$Repo\apps\keepassxc\keepassxc.ini" } ) }
 )
 
 # ---------------------------------------------------------------- helpers TUI
