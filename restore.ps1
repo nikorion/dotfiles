@@ -82,6 +82,17 @@ $groups = @(
         @{ target = "$env:USERPROFILE\.claude\guides";       link = "$Repo\claude\guides" }
         @{ target = "$env:USERPROFILE\.claude\agents";       link = "$Repo\claude\agents" }
         @{ target = "$env:USERPROFILE\.claude\settings.json";link = "$Repo\claude\settings.json" } ) }
+    @{ Name = "Notepad++";       Check = @{Type="Registry";  Value="*Notepad++*"};    Files = @(
+        @{ target = "$env:APPDATA\Notepad++\config.xml";         link = "$Repo\notepad++\config.xml" }
+        @{ target = "$env:APPDATA\Notepad++\contextMenu.xml";    link = "$Repo\notepad++\contextMenu.xml" }
+        @{ target = "$env:APPDATA\Notepad++\shortcuts.xml";      link = "$Repo\notepad++\shortcuts.xml" }
+        @{ target = "$env:APPDATA\Notepad++\stylers.xml";        link = "$Repo\notepad++\stylers.xml" }
+        @{ target = "$env:APPDATA\Notepad++\userDefineLang.xml"; link = "$Repo\notepad++\userDefineLang.xml" } ) }
+    @{ Name = "FileZilla";       Check = @{Type="Registry";  Value="*FileZilla*"};    Files = @(
+        @{ target = "$env:APPDATA\FileZilla\sitemanager.xml"; link = "$Repo\filezilla\sitemanager.xml" }
+        @{ target = "$env:APPDATA\FileZilla\filezilla.xml";   link = "$Repo\filezilla\filezilla.xml" }
+        @{ target = "$env:APPDATA\FileZilla\bookmarks.xml";   link = "$Repo\filezilla\bookmarks.xml" }
+        @{ target = "$env:APPDATA\FileZilla\layout.xml";      link = "$Repo\filezilla\layout.xml" } ) }
 )
 
 # ---------------------------------------------------------------- helpers TUI

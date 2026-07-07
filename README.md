@@ -6,9 +6,11 @@ ce dépôt. Les logiciels n'ont rien à reconfigurer : de leur point de vue, le
 fichier est toujours au même endroit.
 
 Les configs des logiciels non liés au dev (calibre, digiKam, MusicBee,
-Notepad++, OBS, Mp3tag, FileZilla, KeePassXC…) vivent dans le dépôt séparé
+OBS, Mp3tag, KeePassXC…) vivent dans le dépôt séparé
 [`.app-configs`](../.app-configs/README.md) (privé) — hors du périmètre
 habituel d'un repo "dotfiles" et sans intérêt à exposer publiquement.
+Notepad++ et FileZilla restent ici : ce sont des outils de dev (édition de
+code, transfert de fichiers vers des serveurs).
 
 Les secrets (clés, tokens, mots de passe) sont dans le dépôt séparé
 [`.secrets`](../.secrets/README.md), jamais ici.
@@ -59,19 +61,30 @@ liens symboliques échoue sans droits admin.
 │       Pour la liste des apps installées : régénérer avec `scoop export > scoopfile.json`
 │       (pas versionné automatiquement, change souvent).
 │
-└── claude/
-    ├── CLAUDE.md                      → C:\Users\Nico\.claude\CLAUDE.md
-    │   Instructions globales Claude Code (partagées, versionnées).
-    │   NB : CLAUDE.local.md reste volontairement HORS dotfiles (perso/machine).
-    ├── guides/                        → C:\Users\Nico\.claude\guides
-    │   Guides annexes (rédaction CLAUDE.md, feuille de style Calibre).
-    ├── agents/                        → C:\Users\Nico\.claude\agents
-    │   Définitions d'agents personnalisés.
-    └── settings.json                  → C:\Users\Nico\.claude\settings.json
-        Réglages Claude Code (thème, modèle, plugins actifs).
-        Vérifié : ne contient pas de clé API en clair. Re-vérifier avant
-        chaque commit si ce fichier évolue (.credentials.json reste à part,
-        dans .secrets/claude/).
+├── claude/
+│   ├── CLAUDE.md                      → C:\Users\Nico\.claude\CLAUDE.md
+│   │   Instructions globales Claude Code (partagées, versionnées).
+│   │   NB : CLAUDE.local.md reste volontairement HORS dotfiles (perso/machine).
+│   ├── guides/                        → C:\Users\Nico\.claude\guides
+│   │   Guides annexes (rédaction CLAUDE.md, feuille de style Calibre).
+│   ├── agents/                        → C:\Users\Nico\.claude\agents
+│   │   Définitions d'agents personnalisés.
+│   └── settings.json                  → C:\Users\Nico\.claude\settings.json
+│       Réglages Claude Code (thème, modèle, plugins actifs).
+│       Vérifié : ne contient pas de clé API en clair. Re-vérifier avant
+│       chaque commit si ce fichier évolue (.credentials.json reste à part,
+│       dans .secrets/claude/).
+│
+├── notepad++/
+│   └── config.xml, contextMenu.xml, shortcuts.xml, stylers.xml, userDefineLang.xml
+│       → %APPDATA%\Notepad++\*
+│       (langs.xml exclu : fichier par défaut de l'appli, pas personnalisé)
+│
+└── filezilla/
+    └── sitemanager.xml, filezilla.xml, bookmarks.xml, layout.xml
+        → %APPDATA%\FileZilla\*
+        sitemanager.xml référence la clé SSH (.secrets/ssh/id_ed25519.ppk)
+        mais ne stocke aucun mot de passe en clair (auth par clé).
 ```
 
 ## Non traité / à revoir manuellement
