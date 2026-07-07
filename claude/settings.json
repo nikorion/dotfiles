@@ -1,0 +1,10 @@
+{
+  "enabledPlugins": {
+    "claude-code-setup@claude-plugins-official": true,
+    "playground@claude-plugins-official": true
+  },
+  "effortLevel": "medium",
+  "theme": "dark-ansi",
+  "model": "sonnet",
+  "switchModelsOnFlag": true
+}
