@@ -2,3 +2,5 @@
 	editor = \"C:\\Users\\Nico\\AppData\\Local\\Programs\\Microsoft VS Code\\bin\\code\" --wait
 [user]
 	email = moi@nikorion.fr
+[credential "https://git.nikorion.fr"]
+	provider = generic

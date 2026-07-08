@@ -2,4 +2,4 @@
 Host Pi5
     HostName rpi
     User nikorion
-	port 49247
+	Port 22
