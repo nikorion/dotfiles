@@ -44,7 +44,8 @@ foreach ($d in $Depots) {
         if (git status --porcelain) {
             git add -A 2>$null
             $fichiers = @(git diff --cached --name-only)
-            $ajouts = git diff --cached -U0 | Where-Object { $_ -match '^\+' -and $_ -notmatch '^\+\+\+ ' } | ForEach-Object { $_.Substring(1) }
+            # ce script contient lui-meme les motifs : exclu de l'analyse
+            $ajouts = git diff --cached -U0 -- . ":(exclude)scripts/sync-depots.ps1" | Where-Object { $_ -match '^\+' -and $_ -notmatch '^\+\+\+ ' } | ForEach-Object { $_.Substring(1) }
             $suspects = foreach ($m in $MotifsSecret) { $ajouts | Where-Object { $_ -match $m } }
             if ($suspects -and $d.Push.Count -gt 0) {
                 $pushBloque = $true

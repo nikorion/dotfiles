@@ -41,6 +41,31 @@ Active le Mode développeur Windows au préalable si besoin (Paramètres →
 Confidentialité et sécurité → Pour les développeurs), sinon la création de
 liens symboliques échoue sans droits admin.
 
+## Sauvegarde automatique des dépôts
+
+[`scripts/sync-depots.ps1`](scripts/sync-depots.ps1), lancé chaque jour à
+21:00 par la tâche planifiée Windows `sync-depots` (rattrapée à l'ouverture
+de session si le PC était éteint) :
+
+- `.dotfiles`, `.app-configs` : commit auto + push vers `origin` (GitHub) et `gitea`.
+- `raspberry`, `.secrets` : commit local seulement, jamais de push.
+
+Garde-fou : si le diff ressemble à un secret (clé privée, mot de passe/token
+renseigné, mot de passe de site FileZilla, clé privée KeeShare), le commit est fait mais le
+push est bloqué. Journal : `%LOCALAPPDATA%\sync-depots.log` — `ECHEC` ou
+`ATTENTION` = à traiter.
+
+Recréer la tâche sur une nouvelle machine :
+
+```powershell
+$a = New-ScheduledTaskAction -Execute "conhost.exe" -Argument "--headless pwsh.exe -NoProfile -File `"$HOME\.dotfiles\scripts\sync-depots.ps1`""
+$t = New-ScheduledTaskTrigger -Daily -At 21:00
+Register-ScheduledTask -TaskName "sync-depots" -Action $a -Trigger $t -Settings (New-ScheduledTaskSettingsSet -StartWhenAvailable)
+```
+
+Le push vers `gitea` exige des identifiants mémorisés : faire un premier
+`git push gitea` à la main dans chaque dépôt (fenêtre du Git Credential Manager).
+
 ## Hiérarchie
 
 ```
