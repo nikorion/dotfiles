@@ -1,19 +1,32 @@
 {
-  "liveSassCompile.settings.watchOnLaunch": true,
-  "liveSassCompile.settings.generateMap": false,
-  "liveSassCompile.settings.autoprefix": ["> 1%", "last 2 versions"],
-  "files.autoSave": "afterDelay",
-  "explorer.confirmDelete": false,
-  "javascript.updateImportsOnFileMove.enabled": "always",
-  "workbench.editor.labelFormat": "short",
-  "explorer.confirmDragAndDrop": false,
-  "workbench.startupEditor": "none",
+  // ── Éditeur ──────────────────────────────────────────────
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "editor.fontFamily": "'Cascadia Code PL', Consolas, 'Courier New', monospace",
+  "editor.minimap.enabled": false,
   "[javascriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.formatOnSave": true,
-  "telemetry.telemetryLevel": "off",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "svelte.enable-ts-plugin": true,
+
+  // ── Fichiers ─────────────────────────────────────────────
+  "files.autoSave": "afterDelay",
+
+  // ── Workbench ────────────────────────────────────────────
+  "workbench.startupEditor": "none",
+  "workbench.editor.labelFormat": "short",
+  "workbench.secondarySideBar.defaultVisibility": "hidden",
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+
+  // ── Terminal ─────────────────────────────────────────────
+  "terminal.integrated.defaultProfile.windows": "PowerShell 7",
+  "terminal.integrated.enablePersistentSessions": false,
+  "terminal.integrated.persistentSessionReviveProcess": "never",
+  "terminal.integrated.hideOnStartup": "whenEmpty",
+  "terminal.integrated.confirmOnExit": "never",
+  "terminal.integrated.confirmOnKill": "never",
   "terminal.integrated.profiles.windows": {
     "PowerShell 7": {
       "path": "C:\\Program Files\\PowerShell\\7\\pwsh.exe",
@@ -36,15 +49,6 @@
       "color": "terminal.ansiGreen",
     },
   },
-  "terminal.integrated.defaultProfile.windows": "PowerShell 7",
-  "cmake.showOptionsMovedNotification": false,
-  "liveServer.settings.donotShowInfoMsg": true,
-  "liveServer.settings.port": 5173,
-  "powershell.promptToUpdatePowerShell": false,
-  "editor.fontFamily": "'Cascadia Code PL', Consolas, 'Courier New', monospace",
-  "extensions.ignoreRecommendations": true,
-  "terminal.integrated.automationProfile.windows": {},
-  "terminal.integrated.env.windows": {},
   "terminal.integrated.profiles.osx": {
     "bash": {
       "path": "bash",
@@ -68,13 +72,28 @@
       "icon": "terminal-powershell",
     },
   },
-  "security.workspace.trust.untrustedFiles": "open",
-  "remoteHub.commitDirectlyWarning": "off",
+
+  // ── Git ──────────────────────────────────────────────────
   "git.autofetch": true,
-  "git.ignoreRebaseWarning": true,
   "git.enableSmartCommit": true,
   "git.confirmSync": false,
-  "editor.minimap.enabled": false,
+  "git.ignoreRebaseWarning": true,
+  "remoteHub.commitDirectlyWarning": "off",
+
+  // ── Remote SSH ───────────────────────────────────────────
+  "remote.SSH.remotePlatform": {
+    "Pi5": "linux",
+    "192.168.1.34": "linux",
+  },
+
+  // ── Outils / extensions ──────────────────────────────────
+  "liveSassCompile.settings.watchOnLaunch": true,
+  "liveSassCompile.settings.generateMap": false,
+  "liveSassCompile.settings.autoprefix": ["> 1%", "last 2 versions"],
+  "liveServer.settings.donotShowInfoMsg": true,
+  "liveServer.settings.port": 5173,
+  "cmake.showOptionsMovedNotification": false,
+  "powershell.promptToUpdatePowerShell": false,
   "github.copilot.enable": {
     "*": false,
     "plaintext": false,
@@ -83,13 +102,15 @@
     "xml": false,
   },
   "chat.commandCenter.enabled": false,
-  "workbench.secondarySideBar.defaultVisibility": "hidden",
   "chat.viewSessions.orientation": "stacked",
   "claudeCode.preferredLocation": "panel",
-  "remote.SSH.remotePlatform": {
-    "Pi5": "linux",
-    "192.168.1.34": "linux"
-  },
   "claudeCode.environmentVariables": [],
-  "svelte.enable-ts-plugin": true,
+
+  // ── Sécurité / télémétrie ────────────────────────────────
+  "telemetry.telemetryLevel": "off",
+  "security.workspace.trust.untrustedFiles": "open",
+  "extensions.ignoreRecommendations": true,
+  "workbench.colorTheme": "Visual Studio 2017 Dark - C++",
+  "claudeCode.hideOnboarding": true,
+  "chat.titleBar.openInAgentsWindow.enabled": false,
 }

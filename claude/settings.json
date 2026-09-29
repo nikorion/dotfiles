@@ -1,10 +1,23 @@
 {
+  "env": {
+    "CLAUDE_CODE_DISABLE_FEEDBACK_SURVEY": "1"
+  },
+  "model": "opus",
   "enabledPlugins": {
     "claude-code-setup@claude-plugins-official": true,
     "playground@claude-plugins-official": true
   },
+  "outputStyle": "Concise",
   "effortLevel": "medium",
+  "modelSettings": {
+    "claude-sonnet-5": {
+      "effortLevel": "medium"
+    },
+    "claude-opus-5-5": {
+      "effortLevel": "xhigh"
+    }
+  },
   "theme": "dark-ansi",
-  "model": "sonnet",
-  "switchModelsOnFlag": true
+  "switchModelsOnFlag": true,
+  "agentPushNotifEnabled": true
 }
