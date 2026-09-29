@@ -121,13 +121,8 @@
 		<Setting name="Remote recursive operation list refresh">0</Setting>
 		<Setting name="Resolve local symlinks" platform="win">1</Setting>
 		<Setting name="Sitemanager last selected">0/RPi5</Setting>
-		<Setting name="SFTP keyfiles" platform="win">C:\Users\Nico\.ssh\id_ed25519.ppk</Setting>
 		<Setting name="Time Format">0</Setting>
 		<Setting name="Date Format">0</Setting>
-		<Setting name="File associations (v2)" platform="win">conf C:\Windows\system32\OpenWith.exe %f
-info "C:\Program Files\Notepad++\notepad++.exe"
-py C:\Windows\py.exe %f
-save "C:\Program Files\WindowsApps\Microsoft.WindowsNotepad_11.2508.38.0_x64__8wekyb3d8bbwe\Notepad\Notepad.exe" %f</Setting>
 		<Setting name="Default editor" platform="win">1</Setting>
 		<Setting name="Number of Transfers">4</Setting>
 		<Setting name="Queue column widths">211 60 326 80 60 150</Setting>
@@ -202,15 +197,20 @@ resource 0 PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48cmVzb3VyY2UgdmVyc
 		<Setting name="Greeting resources" />
 		<Setting name="Site Manager position">0 352 283 1126 469 </Setting>
 		<Setting name="Already connected choice">1</Setting>
+		<Setting name="File associations (v2)" platform="win">conf C:\Windows\system32\OpenWith.exe %f
+info "C:\Program Files\Notepad++\notepad++.exe"
+py C:\Windows\py.exe %f
+save "C:\Program Files\Notepad++\notepad++.exe"</Setting>
+		<Setting name="SFTP keyfiles" platform="win" />
 		<Setting name="Tab data" sensitive="1">
 			<Tabs>
-				<Tab selected="1">
+				<Tab connected="1" selected="1">
 					<Host>192.168.1.34</Host>
 					<Port>22</Port>
 					<Protocol>1</Protocol>
 					<User>nikorion</User>
-					<Keyfile>C:\Users\Nico\.ssh\id_ed25519.ppk</Keyfile>
-					<Logontype>5</Logontype>
+					<Pass encoding="base64" />
+					<Logontype>1</Logontype>
 					<EncodingType>UTF-8</EncodingType>
 					<BypassProxy>0</BypassProxy>
 					<Name>RPi5</Name>

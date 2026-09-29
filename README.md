@@ -48,7 +48,8 @@ liens symboliques échoue sans droits admin.
 de session si le PC était éteint) :
 
 - `.dotfiles`, `.app-configs` : commit auto + push vers `origin` (GitHub) et `gitea`.
-- `raspberry`, `.secrets` : commit local seulement, jamais de push.
+- `raspberry` : commit auto + push vers `gitea` seulement (dépôt privé).
+- `.secrets` : commit local seulement, jamais de push.
 
 Garde-fou : si le diff ressemble à un secret (clé privée, mot de passe/token
 renseigné, mot de passe de site FileZilla, clé privée KeeShare), le commit est fait mais le

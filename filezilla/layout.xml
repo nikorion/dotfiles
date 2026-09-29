@@ -7,6 +7,7 @@
 		</Resources>
 		<Language id="fr_FR" date="1780584876">
 			<Font font="1;9;-12;0;0;0;400;0;0;0;1;0;0;0;0;Segoe UI" width="669" height="15" />
+			<Dialog name="Settings" width="639" />
 		</Language>
 	</Layout>
 </FileZilla3>

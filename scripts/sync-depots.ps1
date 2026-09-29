@@ -4,7 +4,8 @@
     "Sauvegarde automatique des depots").
 
     - .dotfiles, .app-configs : commit + push vers origin (GitHub) et gitea.
-    - raspberry, .secrets     : commit local seulement, jamais de push.
+    - raspberry               : commit + push vers gitea seulement (serveur perso, depot prive).
+    - .secrets                : commit local seulement, jamais de push.
 
     Garde-fou : si le diff a commiter ressemble a un secret (cle privee,
     mot de passe/token/cle API renseigne), le commit est fait mais le push
@@ -21,7 +22,7 @@ $Log = Join-Path $env:LOCALAPPDATA "sync-depots.log"
 $Depots = @(
     @{ Chemin = "$HOME\.dotfiles";    Push = @("origin", "gitea") }
     @{ Chemin = "$HOME\.app-configs"; Push = @("origin", "gitea") }
-    @{ Chemin = "$HOME\raspberry";    Push = @() }
+    @{ Chemin = "$HOME\raspberry";    Push = @("gitea") }
     @{ Chemin = "$HOME\.secrets";     Push = @() }
 )
 # Lignes ajoutees qui ressemblent a un secret renseigne
@@ -65,7 +66,11 @@ foreach ($d in $Depots) {
             # ne pousse que si le distant est en retard (evite une connexion inutile)
             $avance = git rev-list --count "$r/HEAD..HEAD" 2>$null
             if (-not $avance) { $avance = git rev-list --count "$r/master..HEAD" 2>$null }
-            if ($avance -eq "0") { continue }
+            if ($avance -eq "0") {
+                # rien a pousser : une lecture authentifiee suffit a renouveler le jeton OAuth (expire apres ~30 j sans usage)
+                if ($r -eq "gitea") { git ls-remote -q $r HEAD *> $null; if ($LASTEXITCODE -ne 0) { Write-Log "ECHEC $nom : connexion $r (identifiants expires ? faire un git fetch a la main)" } }
+                continue
+            }
             $sortie = git push -q $r HEAD 2>&1
             if ($LASTEXITCODE -eq 0) { Write-Log "$nom : push $r ok" }
             else { Write-Log "ECHEC $nom : push $r ($(($sortie | Select-Object -Last 1)))" }
