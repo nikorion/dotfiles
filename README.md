@@ -52,7 +52,8 @@ de session si le PC était éteint) :
 
 Garde-fou : si le diff ressemble à un secret (clé privée, mot de passe/token
 renseigné, mot de passe de site FileZilla, clé privée KeeShare), le commit est fait mais le
-push est bloqué. Journal : `%LOCALAPPDATA%\sync-depots.log` — `ECHEC` ou
+push est bloqué, et le reste tant que `.git\sync-depots-bloque` existe
+dans le dépôt (le supprimer après vérification). Journal : `%LOCALAPPDATA%\sync-depots.log` — `ECHEC` ou
 `ATTENTION` = à traiter.
 
 Recréer la tâche sur une nouvelle machine :

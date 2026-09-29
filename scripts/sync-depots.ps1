@@ -40,7 +40,11 @@ foreach ($d in $Depots) {
     if (-not (Test-Path (Join-Path $d.Chemin ".git"))) { Write-Log "ECHEC $nom : depot introuvable"; continue }
     Push-Location $d.Chemin
     try {
-        $pushBloque = $false
+        # Blocage persistant : un commit suspect ne doit pas partir au passage suivant.
+        # Pour debloquer apres verification : supprimer .git\sync-depots-bloque puis relancer.
+        $marqueur = Join-Path $d.Chemin ".git\sync-depots-bloque"
+        $pushBloque = Test-Path $marqueur
+        if ($pushBloque) { Write-Log "ATTENTION $nom : push toujours bloque (supprimer .git\sync-depots-bloque apres verification)" }
         if (git status --porcelain) {
             git add -A 2>$null
             $fichiers = @(git diff --cached --name-only)
@@ -49,7 +53,8 @@ foreach ($d in $Depots) {
             $suspects = foreach ($m in $MotifsSecret) { $ajouts | Where-Object { $_ -match $m } }
             if ($suspects -and $d.Push.Count -gt 0) {
                 $pushBloque = $true
-                Write-Log "ATTENTION $nom : secret possible dans le diff, push bloque ($(@($suspects).Count) ligne(s)). Verifier avec 'git show' avant de pousser."
+                New-Item -ItemType File -Path $marqueur -Force | Out-Null
+                Write-Log "ATTENTION $nom : secret possible dans le diff, push bloque ($(@($suspects).Count) ligne(s)). Verifier avec 'git show', puis supprimer .git\sync-depots-bloque."
             }
             $message = "Sauvegarde auto $(Get-Date -Format 'yyyy-MM-dd') : $($fichiers.Count) fichier(s)`n`n" + (($fichiers | ForEach-Object { "- $_" }) -join "`n")
             git commit -q -m $message 2>$null
