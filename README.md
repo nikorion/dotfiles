@@ -15,7 +15,7 @@ code, transfert de fichiers vers des serveurs).
 Les secrets (clés, tokens, mots de passe) sont dans le dépôt séparé
 [`.secrets`](../.secrets/README.md), jamais ici.
 
-**⚠ Ce dépôt est public sur GitHub.** Avant tout commit, vérifier qu'aucun
+**⚠ Ce dépôt est public sur GitHub et Gitea.** Avant tout commit, vérifier qu'aucun
 fichier ajouté ne contient de mot de passe/token — certains logiciels
 mélangent config et identifiants dans le même fichier « chiffré » de façon
 réversible : dans ce cas, faire vivre le fichier entier dans `.secrets`
@@ -30,7 +30,7 @@ manquent, puis lance les 3 `restore.ps1` à la suite) :
 .\bootstrap.ps1
 ```
 
-`.secrets` n'a pas de remote (jamais publié) : il doit être copié
+`.secrets` n'a pas de remote (jamais publié, push refusé par un hook `pre-push`) : il doit être copié
 manuellement à côté des deux autres (clé USB, Nextcloud…) avant de lancer
 `bootstrap.ps1` pour que son étape soit prise en compte — sinon elle est
 juste signalée et sautée.
@@ -47,9 +47,8 @@ liens symboliques échoue sans droits admin.
 21:00 par la tâche planifiée Windows `sync-depots` (rattrapée à l'ouverture
 de session si le PC était éteint) :
 
-- `.dotfiles`, `.app-configs` : commit auto + push vers `origin` (GitHub) et `gitea`.
-- `raspberry` : commit auto + push vers `gitea` seulement (dépôt privé).
-- `.secrets` : commit local seulement, jamais de push.
+- `.dotfiles` (public), `.app-configs` (privé) : commit auto + push vers `origin` (GitHub) et `gitea`.
+- `raspberry`, `.secrets` : commit local seulement, jamais de push — aucune remote, et un hook `.git/hooks/pre-push` refuse tout push (hooks non versionnés : à recréer sur une nouvelle machine).
 
 Garde-fou : si le diff ressemble à un secret (clé privée, mot de passe/token
 renseigné, mot de passe de site FileZilla, clé privée KeeShare), le commit est fait mais le
