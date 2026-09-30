@@ -7,6 +7,12 @@
     "claude-code-setup@claude-plugins-official": true,
     "playground@claude-plugins-official": true
   },
+  "permissions": {
+    "allow": [
+      "Bash(gh repo create:*)",
+      "PowerShell(gh repo create:*)"
+    ]
+  },
   "outputStyle": "Concise",
   "effortLevel": "medium",
   "modelSettings": {
@@ -14,7 +20,7 @@
       "effortLevel": "medium"
     },
     "claude-opus-5-5": {
-      "effortLevel": "xhigh"
+      "effortLevel": "medium"
     }
   },
   "theme": "dark-ansi",

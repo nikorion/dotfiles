@@ -24,10 +24,6 @@
         <Replace name="**" />
     </FindHistory>
     <History nbMaxFile="20" inSubMenu="no" customLength="-1">
-        <File filename="D:\scripts\dump digikam\dump-MariaDB.ps1" />
-        <File filename="C:\Program Files\MariaDB 11.4\data\my.ini" />
-        <File filename="C:\Users\Nico\-1.14-windows.xml" />
-        <File filename="C:\Users\Nico\tw\kms\tiddlers\logo-goat-mech2.svg.meta" />
         <File filename="D:\projets\devops\tw\plugins\nikorion\TW-Base-Fields\CLAUDE.md" />
         <File filename="D:\projets\devops\tw\plugins\nikorion\TW-Base-Fields\src\base-fields\vocabularies.tid" />
         <File filename="D:\projets\devops\tw\plugins\nikorion\TW-Base-Fields\src\base-fields\readme.tid" />
@@ -44,6 +40,10 @@
         <File filename="D:\projets\devops\tw\plugins\nikorion\TW-Table\wiki\tiddlers\Playground.tid" />
         <File filename="D:\projets\devops\tw\plugins\nikorion\TW-Base-Fields\src\base-fields\language\fr-FR\vocab.multids" />
         <File filename="D:\projets\devops\tw\plugins\nikorion\TW-Dynamic-Table\src\dyntable\procedures\dt-table-dynamic.tid" />
+        <File filename="D:\scripts\tiddlywiki\serve-wiki.ps1" />
+        <File filename="D:\scripts\tiddlywiki\alerte-wiki.ps1" />
+        <File filename="D:\projets\devops\tw\plugins\nikorion\TW-Dynamic-Table\wiki\tiddlers\Playground.tid" />
+        <File filename="C:\Users\Nico\.claude\settings.local.json" />
     </History>
     <ProjectPanels>
         <ProjectPanel id="0" workSpaceFile="" />
@@ -61,7 +61,7 @@
         <GUIConfig name="ScintillaViewsSplitter">vertical</GUIConfig>
         <GUIConfig name="UserDefineDlg" position="undocked">hide</GUIConfig>
         <GUIConfig name="TabSetting" replaceBySpace="no" size="4" backspaceUnindent="no" />
-        <GUIConfig name="AppPosition" x="-1909" y="147" width="1808" height="874" isMaximized="no" />
+        <GUIConfig name="AppPosition" x="19" y="70" width="1808" height="911" isMaximized="no" />
         <GUIConfig name="FindWindowPosition" left="-1932" top="310" right="-1230" bottom="669" isLessModeOn="no" />
         <GUIConfig name="FinderConfig" wrappedLines="no" purgeBeforeEverySearch="no" showOnlyOneEntryPerFoundLine="yes" FiF_ignoreunsavedChangesInOpenedFiles="no" />
         <GUIConfig name="noUpdate" intervalDays="15" nextUpdateDate="20241019" autoUpdateMode="0">yes</GUIConfig>
