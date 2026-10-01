@@ -66,9 +66,16 @@ foreach ($d in $Depots) {
             # ne pousse que si le distant est en retard (evite une connexion inutile)
             $avance = git rev-list --count "$r/HEAD..HEAD" 2>$null
             if (-not $avance) { $avance = git rev-list --count "$r/main..HEAD" 2>$null }
+            if ($r -eq "gitea") {
+                # GCM's Gitea OAuth access token lives ~1 h and GCM does not renew it ahead of time:
+                # the first request after expiry is refused, GCM then drops it and the next one
+                # refreshes it. So always warm up with a cheap authenticated read (twice at most)
+                # before pushing; this also keeps the refresh token alive (~30 days unused).
+                git ls-remote -q $r HEAD *> $null
+                if ($LASTEXITCODE -ne 0) { git ls-remote -q $r HEAD *> $null }
+                if ($LASTEXITCODE -ne 0) { Write-Log "ECHEC $nom : connexion $r (identifiants expires ? faire un git fetch a la main)"; continue }
+            }
             if ($avance -eq "0") {
-                # rien a pousser : une lecture authentifiee suffit a renouveler le jeton OAuth (expire apres ~30 j sans usage)
-                if ($r -eq "gitea") { git ls-remote -q $r HEAD *> $null; if ($LASTEXITCODE -ne 0) { Write-Log "ECHEC $nom : connexion $r (identifiants expires ? faire un git fetch a la main)" } }
                 continue
             }
             $sortie = git push -q $r HEAD 2>&1
