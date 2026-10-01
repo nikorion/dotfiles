@@ -5,3 +5,5 @@
 	name = GOYOT Nicolas
 [credential "https://git.nikorion.fr"]
 	provider = generic
+[init]
+	defaultBranch = main
