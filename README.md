@@ -76,8 +76,12 @@ Le push vers `gitea` exige des identifiants mémorisés : faire un premier
 │       Config git globale (email, éditeur).
 │
 ├── ssh/
-│   └── config                         → C:\Users\Nico\.ssh\config
-│       Config client SSH (hosts, options). Les clés vivent dans .secrets/ssh/.
+│   ├── config                         → C:\Users\Nico\.ssh\config
+│   │   Config client SSH (hosts, options).
+│   └── nikorion.pub, claude.pub       → C:\Users\Nico\.ssh\*.pub
+│       Clés PUBLIQUES « nico@PC1 2026-10 » et « claude@PC1 2026-10 » (publiables).
+│       Les clés privées n'existent que dans KeePassXC (agent OpenSSH + Pageant).
+│       Perdues ? `ssh-add -L` (base déverrouillée) les réaffiche, commentaire compris.
 │
 ├── powershell/
 │   └── Microsoft.PowerShell_profile.ps1 → Documents\PowerShell\Microsoft.PowerShell_profile.ps1
@@ -119,8 +123,8 @@ Le push vers `gitea` exige des identifiants mémorisés : faire un premier
 └── filezilla/
     └── sitemanager.xml, filezilla.xml, bookmarks.xml, layout.xml
         → %APPDATA%\FileZilla\*
-        sitemanager.xml référence la clé SSH (.secrets/ssh/id_ed25519.ppk)
-        mais ne stocke aucun mot de passe en clair (auth par clé).
+        sitemanager.xml ne stocke aucun mot de passe (auth par clé : FileZilla
+        demande la clé nico@PC1 à Pageant, alimenté par KeePassXC).
 ```
 
 ## Non traité / à revoir manuellement

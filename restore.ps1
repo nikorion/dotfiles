@@ -68,7 +68,9 @@ $groups = @(
     @{ Name = "Git";            Check = @{Type="Command";  Value="git"};             Files = @(
         @{ target = "$env:USERPROFILE\.gitconfig"; link = "$Repo\git\.gitconfig" } ) }
     @{ Name = "OpenSSH (config)";Check = @{Type="Command";  Value="ssh"};             Files = @(
-        @{ target = "$env:USERPROFILE\.ssh\config"; link = "$Repo\ssh\config" } ) }
+        @{ target = "$env:USERPROFILE\.ssh\config"; link = "$Repo\ssh\config" }
+        @{ target = "$env:USERPROFILE\.ssh\nikorion.pub"; link = "$Repo\ssh\nikorion.pub" }
+        @{ target = "$env:USERPROFILE\.ssh\claude.pub";   link = "$Repo\ssh\claude.pub" } ) }
     @{ Name = "PowerShell";      Check = $null;                                       Files = @(
         @{ target = "$env:USERPROFILE\Documents\PowerShell\Microsoft.PowerShell_profile.ps1"; link = "$Repo\powershell\Microsoft.PowerShell_profile.ps1" } ) }
     @{ Name = "Windows Terminal";Check = @{Type="Appx";     Value="Microsoft.WindowsTerminal*"}; Files = @(
