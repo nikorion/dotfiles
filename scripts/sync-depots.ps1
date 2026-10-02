@@ -49,9 +49,17 @@ foreach ($d in $Depots) {
         if (git status --porcelain) {
             git add -A 2>$null
             $fichiers = @(git diff --cached --name-only)
-            # ce script contient lui-meme les motifs : exclu de l'analyse
-            $ajouts = git diff --cached -U0 -- . ":(exclude)scripts/sync-depots.ps1" | Where-Object { $_ -match '^\+' -and $_ -notmatch '^\+\+\+ ' } | ForEach-Object { $_.Substring(1) }
+            # exclus de l'analyse : ce script (il contient lui-meme les motifs) et tmm.json
+            # (.app-configs : champs secrets vides ou sans enjeu, verifie 2026-10-02 ; cf. README)
+            $ajouts = git diff --cached -U0 -- . ":(exclude)scripts/sync-depots.ps1" ":(exclude)tinymediamanager/tmm.json" | Where-Object { $_ -match '^\+' -and $_ -notmatch '^\+\+\+ ' } | ForEach-Object { $_.Substring(1) }
             $suspects = foreach ($m in $MotifsSecret) { $ajouts | Where-Object { $_ -match $m } }
+            # tmm.json n'est exclu que tant que l'API HTTP de tinyMediaManager est coupee :
+            # activee, httpApiKey devient un vrai secret -> bloquer et le signaler
+            $tmm = "tinymediamanager/tmm.json"
+            if ((Test-Path $tmm) -and (Select-String -Path $tmm -Pattern '"enableHttpServer"\s*:\s*true' -Quiet)) {
+                $suspects = @($suspects) + "tmm.json : enableHttpServer=true"
+                Write-Log "ATTENTION $nom : API HTTP de tinyMediaManager activee, httpApiKey (tmm.json) est maintenant un vrai secret : regenerer la cle et sortir tmm.json du depot, ou couper l'API"
+            }
             if ($suspects -and $d.Push.Count -gt 0) {
                 $pushBloque = $true
                 New-Item -ItemType File -Path $marqueur -Force | Out-Null
