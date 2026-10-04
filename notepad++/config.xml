@@ -24,8 +24,6 @@
         <Replace name="**" />
     </FindHistory>
     <History nbMaxFile="20" inSubMenu="no" customLength="-1">
-        <File filename="D:\projets\devops\tw\plugins\nikorion\TW-Base-Fields\src\base-fields\readme.tid" />
-        <File filename="D:\projets\devops\tw\plugins\nikorion\TW-Base-Fields\src\base-fields\ui\EditTemplate\vocab-fields.tid" />
         <File filename="D:\projets\devops\tw\plugins\nikorion\TW-Base-Fields\src\base-fields\vocab\role.tid" />
         <File filename="D:\projets\devops\tw\plugins\nikorion\TW-Base-Fields\src\base-fields\ui\EditTemplate\extra-fields.tid" />
         <File filename="D:\projets\devops\tw\plugins\nikorion\TW-Base-Fields\src\base-fields\vocab\icons.multids" />
@@ -44,6 +42,8 @@
         <File filename="C:\Users\Nico\.claude\settings.local.json" />
         <File filename="D:\scripts\dump digikam\mise-a-jour-mariadb.md" />
         <File filename="C:\Users\Nico\.claude\settings.json" />
+        <File filename="D:\projets\devops\tw\plugins\nikorion\TW-Detect-Language\README.md" />
+        <File filename="D:\projets\devops\tw\plugins\nikorion\TW-Detect-Language\README.fr.md" />
     </History>
     <ProjectPanels>
         <ProjectPanel id="0" workSpaceFile="" />
