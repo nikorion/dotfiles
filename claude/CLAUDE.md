@@ -13,6 +13,8 @@
 
 # Pièges techniques
 
+- **`~/.dotfiles` est public** (GitHub `nikorion/dotfiles`, poussé auto par `sync-depots.ps1`) : n'y mettre rien de perso ni sensible (mémoire Claude, config machine détaillée, identifiants). Ce contenu → `~/.secrets` (dépôt local, jamais poussé, hook pre-push).
+
 - **pnpm : jamais de chemin interne codé en dur** (service, tâche planifiée, raccourci, script, config) — ni `pnpm/global/v<N>/<id>/…` (install isolée par paquet global, recréée à chaque `pnpm add -g` / màj → chemin cassé sans erreur visible), ni `node_modules/.pnpm/<pkg>@<ver>…`. À la place : outil global → lanceur stable dans `pnpm bin -g` (shim réécrit par pnpm à chaque màj) ; dans un projet → dépendance locale + script `package.json` / `pnpm exec` / `node_modules/.bin`, ou `require.resolve()` en code.
 
 # Guides (non chargés auto)
