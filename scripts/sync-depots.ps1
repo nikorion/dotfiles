@@ -7,6 +7,10 @@
     - raspberry               : commit local seulement, jamais de push (pas de remote, hook pre-push).
     - .secrets                : commit local seulement, jamais de push (pas de remote, hook pre-push).
 
+    Avant les commits : copie de la memoire persistante de Claude
+    (~/.claude/projects/<projet>/memory) vers .secrets\claude\memory\<projet>,
+    pas vers .dotfiles (public) car elle contient des details perso.
+
     Garde-fou : si le diff a commiter ressemble a un secret (cle privee,
     mot de passe/token/cle API renseigne), le commit est fait mais le push
     est bloque pour ce depot et signale dans le journal. Verifier, corriger
@@ -36,6 +40,16 @@ $MotifsSecret = @(
 function Write-Log($msg) { Add-Content -Path $Log -Value ("{0} {1}" -f (Get-Date -Format "yyyy-MM-dd HH:mm:ss"), $msg) -Encoding utf8 }
 
 Write-Log "=== debut ==="
+# Memoire Claude -> .secrets (miroir par projet ; projets "scratch" de l'appli desktop ignores)
+$memDst = Join-Path $HOME ".secrets\claude\memory"
+Get-ChildItem (Join-Path $HOME ".claude\projects") -Directory -ErrorAction SilentlyContinue |
+    Where-Object { $_.Name -notmatch 'scratch-workspaces' } | ForEach-Object {
+        $m = Join-Path $_.FullName "memory"
+        if (Get-ChildItem $m -File -ErrorAction SilentlyContinue) {
+            robocopy $m (Join-Path $memDst $_.Name) /MIR /NFL /NDL /NJH /NJS /NP | Out-Null
+            if ($LASTEXITCODE -ge 8) { Write-Log "ECHEC memoire Claude : copie $($_.Name) (robocopy $LASTEXITCODE)" }
+        }
+    }
 foreach ($d in $Depots) {
     $nom = Split-Path $d.Chemin -Leaf
     if (-not (Test-Path (Join-Path $d.Chemin ".git"))) { Write-Log "ECHEC $nom : depot introuvable"; continue }
