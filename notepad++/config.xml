@@ -24,8 +24,6 @@
         <Replace name="**" />
     </FindHistory>
     <History nbMaxFile="20" inSubMenu="no" customLength="-1">
-        <File filename="D:\projets\devops\tw\plugins\nikorion\TW-Base-Fields\src\base-fields\vocab\role.tid" />
-        <File filename="D:\projets\devops\tw\plugins\nikorion\TW-Base-Fields\src\base-fields\ui\EditTemplate\extra-fields.tid" />
         <File filename="D:\projets\devops\tw\plugins\nikorion\TW-Base-Fields\src\base-fields\vocab\icons.multids" />
         <File filename="C:\Users\Nico\tw\praxisland\tiddlers\tiddlers\Cristallographie.tid" />
         <File filename="D:\projets\devops\tw\plugins\nikorion\TW-Table\src\table\language\fr-FR\playground.multids" />
@@ -36,7 +34,6 @@
         <File filename="D:\projets\devops\tw\plugins\nikorion\TW-Table\wiki\tiddlers\Playground.tid" />
         <File filename="D:\projets\devops\tw\plugins\nikorion\TW-Base-Fields\src\base-fields\language\fr-FR\vocab.multids" />
         <File filename="D:\projets\devops\tw\plugins\nikorion\TW-Dynamic-Table\src\dyntable\procedures\dt-table-dynamic.tid" />
-        <File filename="D:\scripts\tiddlywiki\serve-wiki.ps1" />
         <File filename="D:\scripts\tiddlywiki\alerte-wiki.ps1" />
         <File filename="D:\projets\devops\tw\plugins\nikorion\TW-Dynamic-Table\wiki\tiddlers\Playground.tid" />
         <File filename="C:\Users\Nico\.claude\settings.local.json" />
@@ -44,6 +41,8 @@
         <File filename="C:\Users\Nico\.claude\settings.json" />
         <File filename="D:\projets\devops\tw\plugins\nikorion\TW-Detect-Language\README.md" />
         <File filename="D:\projets\devops\tw\plugins\nikorion\TW-Detect-Language\README.fr.md" />
+        <File filename="C:\Users\Nico\tw\kms\.gitattributes" />
+        <File filename="C:\Users\Nico\tw\praxisland\.gitattributes" />
     </History>
     <ProjectPanels>
         <ProjectPanel id="0" workSpaceFile="" />
