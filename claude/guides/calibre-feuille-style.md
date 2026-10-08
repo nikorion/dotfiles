@@ -2,23 +2,15 @@
 
 Objectif : dans la visionneuse Calibre, obtenir un rendu Markdown proche de la preview VSCode (clair/sombre auto), avec une feuille de style perso qui fait **autorité** sur un maximum de propriétés.
 
-Contexte : `.md` ouvert dans la visionneuse = converti à la volée (entrée TXT/Markdown, Python-Markdown), avec options de conversion par défaut de Calibre. Rendu proche de markdown-it (VSCode), pas identique.
+Contexte : `.md` ouvert dans la visionneuse = converti à la volée (Python-Markdown) avec extensions **par défaut** `footnotes`, `tables`, `toc` uniquement. Rendu proche de markdown-it (VSCode), pas identique.
 
-## Extensions Markdown (blocs ``` etc.)
+## Extensions Markdown
 
-Par défaut seulement `footnotes`, `tables`, `toc` → blocs ``` non reconnus (`powershell` affiché en texte, lignes collées). Réglage : Calibre (appli principale, pas la visionneuse) → Préférences → Conversion → Options d'entrée → TXT → extensions Markdown. Rouvrir/modifier le `.md` après changement (visionneuse garde en cache la version convertie).
-- Activer : `extra` (= `fenced_code`, `tables`, `footnotes`, `attr_list`, `def_list`, `abbr`, `md_in_html`), `sane_lists` (listes comme VSCode), `toc`.
-- `codehilite` : sans effet visible (conversion retire les classes Pygments → spans sans classe, non stylables), inoffensif.
-- Ne pas cocher :
-  - `nl2br` : chaque retour ligne → `<br>` (VSCode/GitHub recollent les lignes) ;
-  - `meta` : premières lignes `clé: valeur` avalées comme métadonnées, disparaissent ;
-  - `wikilinks` : `[[texte]]` → lien mort (gênant pour notes TiddlyWiki) ;
-  - `legacy_attrs`, `legacy_em` : anciens comportements, inutiles ;
-  - `smarty` : guillemets/tirets typographiques → modifie le texte affiché.
-- Config actuelle de l'utilisateur : `codehilite, extra, footnotes, sane_lists, tables, toc` (`%APPDATA%\calibre\conversion\txt_input.py`, clé `markdown_extensions`).
-- Écrire un `.md` à lire dans la visionneuse → syntaxe utilisable : blocs ``` (langue tolérée, pas de coloration), `[TOC]` (table des matières), listes de définitions (`terme` puis `:   définition`, idéal pour paramètres/options), notes `[^id]`, tableaux, listes imbriquées (indentation 4 espaces).
-- Pas disponible : encadrés `!!! note` (`admonition` non activé), coloration syntaxique.
-- Vérifier un rendu sans ouvrir la visionneuse : `ebook-convert fichier.md out.htmlz --markdown-extensions "<liste ci-dessus>"` puis lire `index.html`. Toujours passer `--markdown-extensions` : la CLI n'applique pas les réglages GUI (défaut `footnotes, tables, toc`).
+⚠️ La visionneuse **ignore** le réglage Calibre → Préférences → Conversion → Options d'entrée → TXT → extensions Markdown (constaté : blocs ``` et listes de définitions non rendus malgré `extra` coché). Ce réglage ne vaut que pour les conversions lancées depuis la bibliothèque.
+- Config GUI actuelle (bibliothèque seulement) : `codehilite, extra, footnotes, sane_lists, tables, toc` (`%APPDATA%\calibre\conversion\txt_input.py`, clé `markdown_extensions`). Éviter d'y cocher `nl2br` (retour ligne → `<br>`), `meta` (premières lignes `clé: valeur` avalées), `wikilinks` (`[[x]]` → lien mort), `legacy_*`, `smarty` (modifie guillemets/tirets). `codehilite` sans effet visible (classes Pygments retirées).
+- Écrire un `.md` à lire dans la visionneuse → syntaxe sûre : blocs de code **indentés de 4 espaces** (pas ```), `[TOC]`, notes `[^id]`, tableaux, listes imbriquées (indentation 4 espaces), termes en `- **terme** : définition` (pas de listes de définitions).
+- Pas disponible : blocs ```, listes de définitions, encadrés `!!! note`, coloration syntaxique.
+- Vérifier un rendu sans ouvrir la visionneuse : `ebook-convert fichier.md out.htmlz` **sans** `--markdown-extensions` (mêmes défauts que la visionneuse), puis lire `index.html`.
 
 ## Où se règle la feuille
 
