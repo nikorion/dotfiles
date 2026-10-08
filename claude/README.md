@@ -41,6 +41,8 @@ Techniques accumulées au fil des sessions. La mention 🤖 indique ce qui est *
 
 - [x] 🙋 **`/clear`&nbsp;en fin de tâche**, avant de fermer VS Code / la session (sauf si je compte reprendre cette conversation précise juste après). Rouvrir une vieille session recharge **tout** son historique et consomme des tokens pour rien si je n'en ai plus besoin.
     - 🤖 Rien côté&nbsp;`CLAUDE.md`&nbsp;: habitude 100 % perso, le modèle ne peut pas&nbsp;`/clear`&nbsp;à ma place.
+- [x] 🙋 **Clore la conversation par « ok merci », « c'est bon », « on en a fini »…** avant le&nbsp;`/clear`.
+    - 🤖 Claude détecte la fin, relit la conversation, enregistre en mémoire persistante ce qui mérite d'être retenu (ou propose de le mettre dans&nbsp;`CLAUDE.md`&nbsp;/ une doc), puis liste ce qu'il a retenu.
 - [x] 🙋 **`/compact`&nbsp;avec discernement** (voir le zoom ci-dessous pour le point de bascule).
     - 🤖 Claude me **prévient** si un&nbsp;`/compact`&nbsp;serait contre-productif avant de l'exécuter.
 - [x] 🙋 **Choisir le bon modèle / effort** pour la tâche.
