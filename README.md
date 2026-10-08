@@ -105,6 +105,8 @@ Le push vers `gitea` exige des identifiants mémorisés : faire un premier
 │   ├── CLAUDE.md                      → C:\Users\Nico\.claude\CLAUDE.md
 │   │   Instructions globales Claude Code (partagées, versionnées).
 │   │   NB : CLAUDE.local.md reste volontairement HORS dotfiles (perso/machine).
+│   ├── README.md                      → C:\Users\Nico\.claude\README.md
+│   │   Mémo perso d'usage de Claude (pour l'humain, non chargé par le modèle).
 │   ├── guides/                        → C:\Users\Nico\.claude\guides
 │   │   Guides annexes (rédaction CLAUDE.md, feuille de style Calibre).
 │   ├── agents/                        → C:\Users\Nico\.claude\agents

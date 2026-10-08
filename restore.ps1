@@ -81,6 +81,7 @@ $groups = @(
         @{ target = "$env:USERPROFILE\.config\scoop\config.json"; link = "$Repo\scoop\config.json" } ) }
     @{ Name = "Claude Code";     Check = @{Type="Command";  Value="claude"};          Files = @(
         @{ target = "$env:USERPROFILE\.claude\CLAUDE.md";    link = "$Repo\claude\CLAUDE.md" }
+        @{ target = "$env:USERPROFILE\.claude\README.md";    link = "$Repo\claude\README.md" }
         @{ target = "$env:USERPROFILE\.claude\guides";       link = "$Repo\claude\guides" }
         @{ target = "$env:USERPROFILE\.claude\agents";       link = "$Repo\claude\agents" }
         @{ target = "$env:USERPROFILE\.claude\settings.json";link = "$Repo\claude\settings.json" } ) }
