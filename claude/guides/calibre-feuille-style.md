@@ -2,7 +2,20 @@
 
 Objectif : dans la visionneuse Calibre, obtenir un rendu Markdown proche de la preview VSCode (clair/sombre auto), avec une feuille de style perso qui fait **autorité** sur un maximum de propriétés.
 
-Contexte : Calibre ne lit pas `.md` directement → convertir en EPUB (entrée Markdown supportée). Le rendu diffère un peu de markdown-it (VSCode), mais s'en approche.
+Contexte : `.md` ouvert dans la visionneuse = converti à la volée (entrée TXT/Markdown, Python-Markdown), avec options de conversion par défaut de Calibre. Rendu proche de markdown-it (VSCode), pas identique.
+
+## Extensions Markdown (blocs ``` etc.)
+
+Par défaut seulement `footnotes`, `tables`, `toc` → blocs ``` non reconnus (`powershell` affiché en texte, lignes collées). Réglage : Calibre (appli principale, pas la visionneuse) → Préférences → Conversion → Options d'entrée → TXT → extensions Markdown. Rouvrir/modifier le `.md` après changement (visionneuse garde en cache la version convertie).
+- Activer : `extra` (= `fenced_code`, `tables`, `footnotes`, `attr_list`, `def_list`, `abbr`, `md_in_html`), `sane_lists` (listes comme VSCode), `toc`.
+- Optionnel : `codehilite` (coloration syntaxe, couleurs propres → risque de jurer avec la feuille clair/sombre ; tester).
+- Ne pas cocher :
+  - `nl2br` : chaque retour ligne → `<br>` (VSCode/GitHub recollent les lignes) ;
+  - `meta` : premières lignes `clé: valeur` avalées comme métadonnées, disparaissent ;
+  - `wikilinks` : `[[texte]]` → lien mort (gênant pour notes TiddlyWiki) ;
+  - `legacy_attrs`, `legacy_em` : anciens comportements, inutiles ;
+  - `smarty` : guillemets/tirets typographiques → modifie le texte affiché.
+- Docs à lire dans la visionneuse sans dépendre de ce réglage : blocs de code indentés de 4 espaces (reconnus partout) plutôt que ```.
 
 ## Où se règle la feuille
 
