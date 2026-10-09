@@ -24,25 +24,25 @@
         <Replace name="**" />
     </FindHistory>
     <History nbMaxFile="20" inSubMenu="no" customLength="-1">
-        <File filename="D:\projets\devops\tw\plugins\nikorion\TW-Base-Fields\src\base-fields\vocab\icons.multids" />
-        <File filename="C:\Users\Nico\tw\praxisland\tiddlers\tiddlers\Cristallographie.tid" />
-        <File filename="D:\projets\devops\tw\plugins\nikorion\TW-Table\src\table\language\fr-FR\playground.multids" />
-        <File filename="D:\projets\devops\tw\plugins\nikorion\TW-Plugin-Info-Tree\src\plugin-info-tree\macros\tree.tid" />
-        <File filename="D:\projets\devops\tw\plugins\nikorion\TW-Table\src\table\language\fr-FR\readme.tid" />
-        <File filename="D:\projets\devops\tw\plugins\nikorion\TW-Table\src\table\readme.tid" />
-        <File filename="D:\projets\devops\tw\plugins\nikorion\TW-Table\src\table\procedures\dt-table-dynamic.tid" />
-        <File filename="D:\projets\devops\tw\plugins\nikorion\TW-Table\wiki\tiddlers\Playground.tid" />
-        <File filename="D:\projets\devops\tw\plugins\nikorion\TW-Base-Fields\src\base-fields\language\fr-FR\vocab.multids" />
-        <File filename="D:\projets\devops\tw\plugins\nikorion\TW-Dynamic-Table\src\dyntable\procedures\dt-table-dynamic.tid" />
-        <File filename="D:\scripts\tiddlywiki\alerte-wiki.ps1" />
-        <File filename="D:\projets\devops\tw\plugins\nikorion\TW-Dynamic-Table\wiki\tiddlers\Playground.tid" />
-        <File filename="C:\Users\Nico\.claude\settings.local.json" />
-        <File filename="D:\scripts\dump digikam\mise-a-jour-mariadb.md" />
-        <File filename="C:\Users\Nico\.claude\settings.json" />
-        <File filename="D:\projets\devops\tw\plugins\nikorion\TW-Detect-Language\README.md" />
-        <File filename="D:\projets\devops\tw\plugins\nikorion\TW-Detect-Language\README.fr.md" />
         <File filename="C:\Users\Nico\tw\kms\.gitattributes" />
         <File filename="C:\Users\Nico\tw\praxisland\.gitattributes" />
+        <File filename="D:\projets\devops\tw\plugins\nikorion\tw-dev\plugin\plugin.info" />
+        <File filename="D:\scripts\tiddlywiki\launch KMS.ps1" />
+        <File filename="D:\projets\devops\tw\plugins\nikorion\TW-Hover-Tilt\scripts\eslint-compact.cjs" />
+        <File filename="D:\projets\devops\tw\plugins\nikorion\TW-Hover-Tilt\scripts\vendor-hover-tilt.cjs" />
+        <File filename="D:\projets\devops\tw\plugins\nikorion\TW-Dynamic-Table\src\dyntable\styles\nk-dyntable.css" />
+        <File filename="D:\scripts\tiddlywiki\README.md" />
+        <File filename="D:\scripts\tiddlywiki\serve-wiki.ps1" />
+        <File filename="C:\Users\Nico\tw\praxisland\tiddlers\system\$__tags_EditorToolbar.tid" />
+        <File filename="C:\Users\Nico\tw\praxisland\tiddlers\system\w.tid" />
+        <File filename="C:\Users\Nico\tw\praxisland\tiddlers\system\s.tid" />
+        <File filename="C:\Users\Nico\tw\praxisland\tiddlers\system\r.tid" />
+        <File filename="C:\Users\Nico\tw\praxisland\tiddlers\system\e.tid" />
+        <File filename="C:\Users\Nico\tw\praxisland\tiddlers\system\$__pr4xis_images_font-awesome_brands_raspberry-pi.tid" />
+        <File filename="C:\Users\Nico\tw\praxisland\tiddlers\system\$__pr4xis_images_tex.png.tid" />
+        <File filename="C:\Users\Nico\tw\praxisland\tiddlers\user\Utiliser une fonte specialement concue en gras.tid" />
+        <File filename="C:\Users\Nico\tw\praxisland\tiddlers\user\test6546.tid" />
+        <File filename="C:\Users\Nico\tw\praxisland\tiddlers\user\test interpolati.tid" />
     </History>
     <ProjectPanels>
         <ProjectPanel id="0" workSpaceFile="" />
@@ -60,7 +60,7 @@
         <GUIConfig name="ScintillaViewsSplitter">vertical</GUIConfig>
         <GUIConfig name="UserDefineDlg" position="undocked">hide</GUIConfig>
         <GUIConfig name="TabSetting" replaceBySpace="no" size="4" backspaceUnindent="no" />
-        <GUIConfig name="AppPosition" x="19" y="70" width="1808" height="911" isMaximized="no" />
+        <GUIConfig name="AppPosition" x="938" y="85" width="953" height="911" isMaximized="no" />
         <GUIConfig name="FindWindowPosition" left="-1932" top="310" right="-1230" bottom="669" isLessModeOn="no" />
         <GUIConfig name="FinderConfig" wrappedLines="no" purgeBeforeEverySearch="no" showOnlyOneEntryPerFoundLine="yes" FiF_ignoreunsavedChangesInOpenedFiles="no" />
         <GUIConfig name="noUpdate" intervalDays="15" nextUpdateDate="20241019" autoUpdateMode="0">yes</GUIConfig>
@@ -102,7 +102,7 @@
         <GUIConfig name="SmartHighLight" matchCase="no" wholeWordOnly="yes" useFindSettings="no" onAnotherView="no">yes</GUIConfig>
         <GUIConfig name="DarkMode" enable="yes" colorTone="5" customColorTop="2105376" customColorMenuHotTrack="4210752" customColorActive="4210752" customColorMain="2105376" customColorError="176" customColorText="14737632" customColorDarkText="12632256" customColorDisabledText="8421504" customColorLinkText="65535" customColorEdge="6579300" customColorHotEdge="10197915" customColorDisabledEdge="4737096" enableWindowsMode="no" darkThemeName="Twilight.xml" darkToolBarIconSet="0" darkTbFluentColor="0" darkTbFluentCustomColor="16229943" darkTbFluentMono="no" darkTabIconSet="2" darkTabUseTheme="no" lightThemeName="" lightToolBarIconSet="1" lightTbFluentColor="0" lightTbFluentCustomColor="0" lightTbFluentMono="no" lightTabIconSet="1" lightTabUseTheme="yes" />
         <GUIConfig name="ColorPickerCustomColors" color0="16777215" color1="16777215" color2="16777215" color3="16777215" color4="16777215" color5="16777215" color6="16777215" color7="16777215" color8="16777215" color9="16777215" color10="16777215" color11="16777215" color12="16777215" color13="16777215" color14="16777215" color15="16777215" />
-        <GUIConfig name="ScintillaPrimaryView" lineNumberMargin="show" lineNumberDynamicWidth="yes" bookMarkMargin="show" indentGuideLine="show" folderMarkStyle="box" isChangeHistoryEnabled="1" lineWrapMethod="aligned" currentLineIndicator="1" currentLineFrameWidth="1" virtualSpace="no" scrollBeyondLastLine="yes" rightClickKeepsSelection="no" selectedTextForegroundSingleColor="no" disableAdvancedScrolling="no" wrapSymbolShow="hide" Wrap="no" borderEdge="yes" isEdgeBgMode="no" edgeMultiColumnPos="" zoom="3" zoom2="3" zoomSync="no" whiteSpaceShow="hide" eolShow="hide" eolMode="1" npcShow="hide" npcMode="1" npcCustomColor="no" npcIncludeCcUniEOL="no" npcNoInputC0="no" ccShow="yes" borderWidth="2" smoothFont="yes" paddingLeft="0" paddingRight="0" distractionFreeDivPart="4" lineCopyCutWithoutSelection="yes" disableSelectedTextDragDrop="no" multiSelection="yes" columnSel2MultiEdit="yes" />
+        <GUIConfig name="ScintillaPrimaryView" lineNumberMargin="show" lineNumberDynamicWidth="yes" bookMarkMargin="show" indentGuideLine="show" folderMarkStyle="box" isChangeHistoryEnabled="1" lineWrapMethod="aligned" currentLineIndicator="1" currentLineFrameWidth="1" virtualSpace="no" scrollBeyondLastLine="yes" rightClickKeepsSelection="no" selectedTextForegroundSingleColor="no" disableAdvancedScrolling="no" wrapSymbolShow="hide" Wrap="no" borderEdge="yes" isEdgeBgMode="no" edgeMultiColumnPos="" zoom="5" zoom2="3" zoomSync="no" whiteSpaceShow="hide" eolShow="hide" eolMode="1" npcShow="hide" npcMode="1" npcCustomColor="no" npcIncludeCcUniEOL="no" npcNoInputC0="no" ccShow="yes" borderWidth="2" smoothFont="yes" paddingLeft="0" paddingRight="0" distractionFreeDivPart="4" lineCopyCutWithoutSelection="yes" disableSelectedTextDragDrop="no" multiSelection="yes" columnSel2MultiEdit="yes" />
         <GUIConfig name="DockingManager" leftWidth="136" rightWidth="114" topHeight="200" bottomHeight="200">
             <PluginDlg pluginName="Notepad++::InternalFunction" id="44080" curr="0" prev="-1" isVisible="no" />
             <PluginDlg pluginName="Notepad++::InternalFunction" id="0" curr="3" prev="-1" isVisible="yes" />
