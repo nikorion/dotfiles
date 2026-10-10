@@ -2,16 +2,16 @@
   "env": {
     "CLAUDE_CODE_DISABLE_FEEDBACK_SURVEY": "1"
   },
-  "model": "opus",
-  "enabledPlugins": {
-    "claude-code-setup@claude-plugins-official": true,
-    "playground@claude-plugins-official": true
-  },
   "permissions": {
     "allow": [
       "Bash(gh repo create:*)",
       "PowerShell(gh repo create:*)"
     ]
+  },
+  "model": "sonnet",
+  "enabledPlugins": {
+    "claude-code-setup@claude-plugins-official": true,
+    "playground@claude-plugins-official": true
   },
   "outputStyle": "Concise",
   "effortLevel": "medium",

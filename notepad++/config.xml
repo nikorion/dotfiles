@@ -24,7 +24,6 @@
         <Replace name="**" />
     </FindHistory>
     <History nbMaxFile="20" inSubMenu="no" customLength="-1">
-        <File filename="C:\Users\Nico\tw\kms\.gitattributes" />
         <File filename="C:\Users\Nico\tw\praxisland\.gitattributes" />
         <File filename="D:\projets\devops\tw\plugins\nikorion\tw-dev\plugin\plugin.info" />
         <File filename="D:\scripts\tiddlywiki\launch KMS.ps1" />
@@ -32,7 +31,6 @@
         <File filename="D:\projets\devops\tw\plugins\nikorion\TW-Hover-Tilt\scripts\vendor-hover-tilt.cjs" />
         <File filename="D:\projets\devops\tw\plugins\nikorion\TW-Dynamic-Table\src\dyntable\styles\nk-dyntable.css" />
         <File filename="D:\scripts\tiddlywiki\README.md" />
-        <File filename="D:\scripts\tiddlywiki\serve-wiki.ps1" />
         <File filename="C:\Users\Nico\tw\praxisland\tiddlers\system\$__tags_EditorToolbar.tid" />
         <File filename="C:\Users\Nico\tw\praxisland\tiddlers\system\w.tid" />
         <File filename="C:\Users\Nico\tw\praxisland\tiddlers\system\s.tid" />
@@ -43,6 +41,9 @@
         <File filename="C:\Users\Nico\tw\praxisland\tiddlers\user\Utiliser une fonte specialement concue en gras.tid" />
         <File filename="C:\Users\Nico\tw\praxisland\tiddlers\user\test6546.tid" />
         <File filename="C:\Users\Nico\tw\praxisland\tiddlers\user\test interpolati.tid" />
+        <File filename="D:\scripts\tiddlywiki\serve-wiki.ps1" />
+        <File filename="D:\scripts\tiddlywiki\alerte-wiki.ps1" />
+        <File filename="D:\scripts\tiddlywiki\launch praxisland.ps1" />
     </History>
     <ProjectPanels>
         <ProjectPanel id="0" workSpaceFile="" />
@@ -60,7 +61,7 @@
         <GUIConfig name="ScintillaViewsSplitter">vertical</GUIConfig>
         <GUIConfig name="UserDefineDlg" position="undocked">hide</GUIConfig>
         <GUIConfig name="TabSetting" replaceBySpace="no" size="4" backspaceUnindent="no" />
-        <GUIConfig name="AppPosition" x="938" y="85" width="953" height="911" isMaximized="no" />
+        <GUIConfig name="AppPosition" x="585" y="85" width="1306" height="911" isMaximized="no" />
         <GUIConfig name="FindWindowPosition" left="-1932" top="310" right="-1230" bottom="669" isLessModeOn="no" />
         <GUIConfig name="FinderConfig" wrappedLines="no" purgeBeforeEverySearch="no" showOnlyOneEntryPerFoundLine="yes" FiF_ignoreunsavedChangesInOpenedFiles="no" />
         <GUIConfig name="noUpdate" intervalDays="15" nextUpdateDate="20241019" autoUpdateMode="0">yes</GUIConfig>

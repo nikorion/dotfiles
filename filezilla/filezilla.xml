@@ -131,7 +131,6 @@
 		<Setting name="Remote filelist sortorder">0 0</Setting>
 		<Setting name="Greeting version">3.70.6</Setting>
 		<Setting name="Greeting resources" />
-		<Setting name="Site Manager position">0 352 283 1126 469 </Setting>
 		<Setting name="Already connected choice">1</Setting>
 		<Setting name="File associations (v2)" platform="win">conf C:\Windows\system32\OpenWith.exe %f
 info "C:\Program Files\Notepad++\notepad++.exe"
@@ -144,6 +143,7 @@ save "C:\Program Files\Notepad++\notepad++.exe"</Setting>
 release 3.70.6 https://dl1.cdn.filezilla-project.org/FileZilla_3.70.6_win64-setup.exe 12726408 sha512 2fd8b5393a460e33ef4e1e83984189978f8f5d4d03d8e14f4dc99d28cdc9b33e7a19ec8885361392994239896327ab56d10a4b765d4fab6e4dede65efca37ec1 sig:lmW1AzRCV5gHztk9Xgl+v13ZwbHpJkL/IdH23IENXx5Oin1a4PuCYLSgNBNQQgrqoYl0//aYpNyRvKVrDp1qDg
 </Setting>
 		<Setting name="Window position and size">0 61 6 1702 918 </Setting>
+		<Setting name="Site Manager position">0 349 266 1126 469 </Setting>
 		<Setting name="Tab data" sensitive="1">
 			<Tabs>
 				<Tab connected="1" selected="1">
